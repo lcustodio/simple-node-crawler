@@ -1,0 +1,27 @@
+{
+  "name": "kite-crawler",
+  "version": "1.0.0",
+  "description": "",
+  "main": "src/main.js",
+  "scripts": {
+    "main": "npm run build && node .dist/src/main.js",
+    "build": "babel . -d .dist --ignore=\"node_modules\""
+  },
+  "keywords": [
+    "kite",
+    "crawler"
+  ],
+  "author": "Luis Custodio",
+  "license": "MIT",
+  "dependencies": {
+    "node-fetch": "^1.6.3",
+    "parse5": "^3.0.1"
+  },
+  "devDependencies": {
+    "babel-cli": "*",
+    "babel-core": "*",
+    "babel-preset-es2015-node5": "*",
+    "babel-preset-stage-3": "*",
+    "babel-register": "*"
+  }
+}
