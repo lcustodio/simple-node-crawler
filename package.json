@@ -14,8 +14,8 @@
   "author": "Luis Custodio",
   "license": "MIT",
   "dependencies": {
-    "node-fetch": "^1.6.3",
-    "parse5": "^3.0.1"
+    "cheerio": "^0.22.0",
+    "node-fetch": "^1.6.3"
   },
   "devDependencies": {
     "babel-cli": "*",

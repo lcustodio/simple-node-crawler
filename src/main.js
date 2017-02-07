@@ -1,16 +1,14 @@
 import fetch from 'node-fetch';
-import parse5 from 'parse5';
+import cheerio from 'cheerio';
 
 fetch('https://www.lovinaadventure.com.br')
   .then(response => {
 
     response.text()
-    .then(a => {
+    .then(htmlText => {
 
-        const document = parse5.parse(a);
-
-        //console.log(document.childNodes[1].tagName); //> 'html'
-        console.log(document.childNodes[1].childNodes[2]); //> 'html'
+        let $ = cheerio.load(htmlText);
+        console.log( $('#WIND_NOS').text() );
     });
 
   })
