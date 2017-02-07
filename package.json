@@ -5,6 +5,7 @@
   "main": "src/main.js",
   "scripts": {
     "main": "npm run build && node .dist/src/main.js",
+    "alternative": "npm run build && node .dist/src/alternative.js",
     "build": "babel . -d .dist --ignore=\"node_modules\""
   },
   "keywords": [
@@ -15,7 +16,8 @@
   "license": "MIT",
   "dependencies": {
     "cheerio": "^0.22.0",
-    "node-fetch": "^1.6.3"
+    "node-fetch": "^1.6.3",
+    "request": "^2.79.0"
   },
   "devDependencies": {
     "babel-cli": "*",
