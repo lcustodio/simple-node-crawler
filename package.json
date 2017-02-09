@@ -5,8 +5,8 @@
   "main": "src/main.js",
   "scripts": {
     "main": "npm run build && node .dist/src/main.js",
-    "alternative": "npm run build && node .dist/src/alternative.js",
-    "build": "babel . -d .dist --ignore=\"node_modules\""
+    "build": "babel . -d .dist --ignore=\"node_modules\"",
+    "kite": "node .dist/src/main.js"
   },
   "keywords": [
     "kite",
@@ -16,6 +16,7 @@
   "license": "MIT",
   "dependencies": {
     "cheerio": "^0.22.0",
+    "js-crawler": "^0.3.15",
     "node-fetch": "^1.6.3",
     "request": "^2.79.0"
   },
@@ -24,6 +25,7 @@
     "babel-core": "*",
     "babel-preset-es2015-node5": "*",
     "babel-preset-stage-3": "*",
-    "babel-register": "*"
+    "babel-register": "*",
+    "phantom": "^4.0.0"
   }
 }

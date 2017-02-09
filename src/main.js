@@ -1,17 +1,19 @@
-import fetch from 'node-fetch';
-import cheerio from 'cheerio';
 
-fetch('https://www.lovinaadventure.com.br')
-  .then(response => {
+const phantom = require('phantom');
+var url = 'https://www.lovinaadventure.com.br';
 
-    response.text()
-    .then(htmlText => {
+(async function() {
 
-        let $ = cheerio.load(htmlText);
-        console.log( $('#WIND_NOS').text() );
-    });
+  const instance = await phantom.create();
+  const page = await instance.createPage();
 
-  })
-  .catch(err => {
-    console.log(err);
+  await page.open(url);
+
+  page.evaluate(function() {
+    return document.getElementById('WIND_NOS').innerHTML;
+  }).then(function(html){
+    console.log(html);
   });
+
+  await instance.exit();
+}());
